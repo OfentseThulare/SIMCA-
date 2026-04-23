@@ -96,6 +96,41 @@ export default function PrimaryContactSlide({ data, onChange, onNext, onBack, er
         onChange={onChange}
         error={errors.escalation_contact_email}
       />
+      <TextInput
+        label="Outreach sequence approver name"
+        name="outreach_sequence_approver_name"
+        value={data.outreach_sequence_approver_name}
+        onChange={onChange}
+        placeholder="Who in SAMCA approves the outreach sequence copy before it goes live?"
+        required
+        error={errors.outreach_sequence_approver_name}
+      />
+      <TextInput
+        label="Outreach sequence approver email"
+        name="outreach_sequence_approver_email"
+        type="email"
+        value={data.outreach_sequence_approver_email}
+        onChange={onChange}
+        placeholder="Email for the sequence approver"
+        required
+        error={errors.outreach_sequence_approver_email}
+      />
+      <TextInput
+        label="Technical handover contact name"
+        name="technical_handover_contact_name"
+        value={data.technical_handover_contact_name}
+        onChange={onChange}
+        placeholder="Technical contact who receives platform credentials and CRM handover at milestones"
+        error={errors.technical_handover_contact_name}
+      />
+      <TextInput
+        label="Technical handover contact email"
+        name="technical_handover_contact_email"
+        type="email"
+        value={data.technical_handover_contact_email}
+        onChange={onChange}
+        error={errors.technical_handover_contact_email}
+      />
 
       <NavigationButtons onBack={onBack} onNext={onNext} />
     </SliderCard>

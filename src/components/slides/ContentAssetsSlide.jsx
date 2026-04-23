@@ -1,6 +1,6 @@
 import SliderCard from '../ui/SliderCard'
-import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function ContentAssetsSlide({ data, onChange, onNext, onBack, errors }) {
@@ -45,28 +45,31 @@ export default function ContentAssetsSlide({ data, onChange, onNext, onBack, err
         onChange={onChange}
         error={errors.content_fireside_recordings}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Fireside Conversation themes and speakers"
-        name="content_fireside_themes"
-        value={data.content_fireside_themes}
+        textFieldName="content_fireside_themes"
+        uploadFieldName="content_fireside_themes_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="Themes and speakers from past or upcoming Fireside Conversations"
         error={errors.content_fireside_themes}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Existing testimonials"
-        name="content_testimonials"
-        value={data.content_testimonials}
+        textFieldName="content_testimonials"
+        uploadFieldName="content_testimonials_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Existing quotes or testimonials from prior MIS editions, partners, or community stakeholders"
         error={errors.content_testimonials}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Case studies"
-        name="content_case_studies"
-        value={data.content_case_studies}
+        textFieldName="content_case_studies"
+        uploadFieldName="content_case_studies_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="Any existing case studies: wastewater refurbishment, community health, enterprise development, etc."
@@ -80,10 +83,11 @@ export default function ContentAssetsSlide({ data, onChange, onNext, onBack, err
         onChange={onChange}
         error={errors.content_licensed_footage}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Content approval workflow"
-        name="content_approval_workflow"
-        value={data.content_approval_workflow}
+        textFieldName="content_approval_workflow"
+        uploadFieldName="content_approval_workflow_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="Who approves content before publishing? What is the expected turnaround? Example: Primary contact approves within 24 hours, CEO for pillar posts within 48 hours."

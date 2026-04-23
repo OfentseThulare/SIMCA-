@@ -2,6 +2,7 @@ import SliderCard from '../ui/SliderCard'
 import TextInput from '../ui/TextInput'
 import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function EntityDetailsSlide({ data, onChange, onNext, onBack, errors }) {
@@ -119,13 +120,14 @@ export default function EntityDetailsSlide({ data, onChange, onNext, onBack, err
         required
         error={errors.samca_billing_contact_email}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Banking notes"
-        name="samca_banking_notes"
-        value={data.samca_banking_notes}
+        textFieldName="samca_banking_notes"
+        uploadFieldName="samca_banking_notes_upload"
+        data={data}
         onChange={onChange}
         rows={2}
-        placeholder="Banking details for reimbursements only. Do not share full account numbers here; we will collect those separately via secure channel."
+        placeholder="Banking details for reimbursements only, or upload a bank confirmation letter. Do not paste full account numbers in free text; we collect those separately via secure channel."
         error={errors.samca_banking_notes}
       />
 

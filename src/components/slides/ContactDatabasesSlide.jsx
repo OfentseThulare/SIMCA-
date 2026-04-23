@@ -1,6 +1,6 @@
 import SliderCard from '../ui/SliderCard'
-import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function ContactDatabasesSlide({ data, onChange, onNext, onBack, errors }) {
@@ -58,19 +58,21 @@ export default function ContactDatabasesSlide({ data, onChange, onNext, onBack, 
         onChange={onChange}
         error={errors.db_community_list}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Blacklist notes"
-        name="db_blacklist_notes"
-        value={data.db_blacklist_notes}
+        textFieldName="db_blacklist_notes"
+        uploadFieldName="db_blacklist_notes_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Any individuals, companies, or domains that must be excluded from all outreach"
         error={errors.db_blacklist_notes}
       />
-      <TextArea
+      <UploadOrTextArea
         label="List handover notes"
-        name="db_handover_notes"
-        value={data.db_handover_notes}
+        textFieldName="db_handover_notes"
+        uploadFieldName="db_handover_notes_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="How you will share the lists. Upload in the Assets section or share via secure link."

@@ -17,6 +17,14 @@ const CATEGORIES = [
   'Testimonials or Case Studies',
   'Past Event Collateral',
   'Government Endorsement Letter',
+  'Pillar or Narrative Notes (PDF/DOCX)',
+  'Three to Five Year Plan Document',
+  'PR Partner MoU or Scope Document',
+  'Schools Programme MoU',
+  'FlowSync Partnership Documentation',
+  'Existing CRM Export',
+  'WhatsApp Message Templates',
+  'Existing Approval Workflow Document',
   'Other',
 ]
 
@@ -38,7 +46,7 @@ export default function FileUpload({ files, onFilesChange }) {
     if (validFiles.length === 0) return
 
     if (!supabase) {
-      alert('File upload is not available. Please contact Atlas directly at hello@atlasconsultinggroup.co.za')
+      alert('File upload is not available. Please contact Atlas directly at hello@atlascg.co.za')
       return
     }
 

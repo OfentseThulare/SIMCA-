@@ -1,7 +1,7 @@
 import SliderCard from '../ui/SliderCard'
 import TextInput from '../ui/TextInput'
-import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function EventStructureSlide({ data, onChange, onNext, onBack, errors }) {
@@ -28,22 +28,24 @@ export default function EventStructureSlide({ data, onChange, onNext, onBack, er
         required
         error={errors.event_three_pillars_confirmed}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Pillar notes and refinements"
-        name="event_pillar_notes"
-        value={data.event_pillar_notes}
+        textFieldName="event_pillar_notes"
+        uploadFieldName="event_pillar_notes_upload"
+        data={data}
         onChange={onChange}
         rows={4}
-        placeholder="Add any refinements, context, or pillar-specific objectives"
+        placeholder="Add any refinements, context, or pillar-specific objectives, or upload a pillar brief"
         error={errors.event_pillar_notes}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Narrative themes"
-        name="event_narrative_themes"
-        value={data.event_narrative_themes}
+        textFieldName="event_narrative_themes"
+        uploadFieldName="event_narrative_themes_upload"
+        data={data}
         onChange={onChange}
         rows={3}
-        placeholder="Sustainability, Harmony, Accountability, Transformation — confirm or amend"
+        placeholder="Sustainability, Harmony, Accountability, Transformation — confirm or amend, or upload"
         required
         error={errors.event_narrative_themes}
       />
@@ -71,30 +73,33 @@ export default function EventStructureSlide({ data, onChange, onNext, onBack, er
         placeholder="Mayoral Golf Day and closing"
         error={errors.event_day3_theme}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Hero message"
-        name="event_hero_message"
-        value={data.event_hero_message}
+        textFieldName="event_hero_message"
+        uploadFieldName="event_hero_message_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="In one paragraph, what is the single most important thing an attendee should walk away understanding?"
         required
         error={errors.event_hero_message}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Differentiation"
-        name="event_differentiation"
-        value={data.event_differentiation}
+        textFieldName="event_differentiation"
+        uploadFieldName="event_differentiation_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="How is MIS 2026 distinct from Mining Indaba, Joburg Indaba, and other SA mining events?"
         required
         error={errors.event_differentiation}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Restricted topics"
-        name="event_restricted_topics"
-        value={data.event_restricted_topics}
+        textFieldName="event_restricted_topics"
+        uploadFieldName="event_restricted_topics_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Any topics, political positions, or commercial matters we should not touch in public content"

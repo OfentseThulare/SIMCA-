@@ -1,6 +1,6 @@
 import SliderCard from '../ui/SliderCard'
 import TextInput from '../ui/TextInput'
-import TextArea from '../ui/TextArea'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function GovernmentPartnersSlide({ data, onChange, onNext, onBack, errors }) {
@@ -44,19 +44,21 @@ export default function GovernmentPartnersSlide({ data, onChange, onNext, onBack
         onChange={onChange}
         error={errors.bojanala_municipality_contact}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Community stakeholder notes"
-        name="community_stakeholder_notes"
-        value={data.community_stakeholder_notes}
+        textFieldName="community_stakeholder_notes"
+        uploadFieldName="community_stakeholder_notes_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="Community organisations, chiefs, and civil society groups engaged or to be engaged"
         error={errors.community_stakeholder_notes}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Co-host and strategic delivery partners"
-        name="co_host_partners"
-        value={data.co_host_partners}
+        textFieldName="co_host_partners"
+        uploadFieldName="co_host_partners_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Any co-hosting, co-branded, or strategic delivery partners not already mentioned"
@@ -81,15 +83,26 @@ export default function GovernmentPartnersSlide({ data, onChange, onNext, onBack
         required
         error={errors.pr_partner_contact}
       />
-      <TextArea
+      <UploadOrTextArea
         label="PR scope boundary"
-        name="pr_scope_boundary"
-        value={data.pr_scope_boundary}
+        textFieldName="pr_scope_boundary"
+        uploadFieldName="pr_scope_boundary_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="What is the PR partner responsible for, and where does their scope end and Atlas's begin? Be specific."
         required
         error={errors.pr_scope_boundary}
+      />
+      <UploadOrTextArea
+        label="PR partner scope document"
+        textFieldName="pr_partner_mou"
+        uploadFieldName="pr_partner_mou_upload"
+        data={data}
+        onChange={onChange}
+        rows={4}
+        placeholder="Paste or upload the MoU, engagement letter, or scope agreement with the PR partner so Atlas can see exactly where their responsibilities end and ours begin."
+        error={errors.pr_partner_mou}
       />
 
       <NavigationButtons onBack={onBack} onNext={onNext} />

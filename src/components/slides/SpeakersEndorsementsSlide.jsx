@@ -1,6 +1,7 @@
 import SliderCard from '../ui/SliderCard'
 import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function SpeakersEndorsementsSlide({ data, onChange, onNext, onBack, errors }) {
@@ -11,25 +12,27 @@ export default function SpeakersEndorsementsSlide({ data, onChange, onNext, onBa
         Speakers, endorsements, and VIPs
       </h2>
       <p className="text-[15px] text-atlas-dark/40 leading-relaxed mb-10">
-        The rolling speaker pipeline, government endorsements, and VIP guest considerations.
+        Atlas produces speaker and endorsement announcement graphics on a rolling basis. This section captures the speaker pipeline; SAMCA remains responsible for securing confirmations.
       </p>
 
-      <TextArea
+      <UploadOrTextArea
         label="Confirmed speakers"
-        name="speaker_confirmed_list"
-        value={data.speaker_confirmed_list}
+        textFieldName="speaker_confirmed_list"
+        uploadFieldName="speaker_confirmed_list_upload"
+        data={data}
         onChange={onChange}
         rows={6}
-        placeholder="Name, title, organisation, session, confirmation status. One per line."
+        placeholder="Name, title, organisation, session, confirmation status. One per line, or upload a speaker list."
         error={errors.speaker_confirmed_list}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Target speaker list"
-        name="speaker_target_list"
-        value={data.speaker_target_list}
+        textFieldName="speaker_target_list"
+        uploadFieldName="speaker_target_list_upload"
+        data={data}
         onChange={onChange}
         rows={6}
-        placeholder="Invited but not yet confirmed speakers. One per line with status."
+        placeholder="Invited but not yet confirmed speakers. One per line with status, or upload a CSV."
         required
         error={errors.speaker_target_list}
       />
@@ -61,10 +64,11 @@ export default function SpeakersEndorsementsSlide({ data, onChange, onNext, onBa
         onChange={onChange}
         error={errors.endorsement_minister_status}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Traditional leadership"
-        name="endorsement_traditional_leadership"
-        value={data.endorsement_traditional_leadership}
+        textFieldName="endorsement_traditional_leadership"
+        uploadFieldName="endorsement_traditional_leadership_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Kings, queens, traditional authorities engaged for the Kings' Honour Cocktail"
@@ -79,19 +83,21 @@ export default function SpeakersEndorsementsSlide({ data, onChange, onNext, onBa
         placeholder="Which endorsement videos are planned or recorded. Include Ms Lindiwe and any others."
         error={errors.endorsement_video_status}
       />
-      <TextArea
+      <UploadOrTextArea
         label="VIP guest list notes"
-        name="vip_guest_list_notes"
-        value={data.vip_guest_list_notes}
+        textFieldName="vip_guest_list_notes"
+        uploadFieldName="vip_guest_list_notes_upload"
+        data={data}
         onChange={onChange}
         rows={4}
         placeholder="Known personal invitees who are not delegates, sponsors, or speakers"
         error={errors.vip_guest_list_notes}
       />
-      <TextArea
+      <UploadOrTextArea
         label="CEO Recognition Ceremony nominees"
-        name="ceo_recognition_nominees"
-        value={data.ceo_recognition_nominees}
+        textFieldName="ceo_recognition_nominees"
+        uploadFieldName="ceo_recognition_nominees_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="Current thinking on CEO Recognition Ceremony honourees"

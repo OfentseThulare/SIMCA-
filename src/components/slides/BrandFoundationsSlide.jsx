@@ -2,6 +2,7 @@ import SliderCard from '../ui/SliderCard'
 import TextInput from '../ui/TextInput'
 import TextArea from '../ui/TextArea'
 import RadioGroup from '../ui/RadioGroup'
+import UploadOrTextArea from '../ui/UploadOrTextArea'
 import NavigationButtons from '../ui/NavigationButtons'
 
 export default function BrandFoundationsSlide({ data, onChange, onNext, onBack, errors }) {
@@ -24,13 +25,14 @@ export default function BrandFoundationsSlide({ data, onChange, onNext, onBack, 
         placeholder="Tell us which logo variations you have. You will upload the files in the Assets section later."
         error={errors.brand_logo_note}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Primary brand colours"
-        name="brand_primary_colours"
-        value={data.brand_primary_colours}
+        textFieldName="brand_primary_colours"
+        uploadFieldName="brand_primary_colours_upload"
+        data={data}
         onChange={onChange}
         rows={2}
-        placeholder="Provide hex codes or Pantone references. Example: Primary #0B5134, Gold #D4AF37"
+        placeholder="Provide hex codes or Pantone references, or upload a colour palette document. Example: Primary #0B5134, Gold #D4AF37"
         required
         error={errors.brand_primary_colours}
       />
@@ -65,13 +67,14 @@ export default function BrandFoundationsSlide({ data, onChange, onNext, onBack, 
         required
         error={errors.brand_tone}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Brand voice words"
-        name="brand_voice_words"
-        value={data.brand_voice_words}
+        textFieldName="brand_voice_words"
+        uploadFieldName="brand_voice_words_upload"
+        data={data}
         onChange={onChange}
         rows={2}
-        placeholder="Three to five adjectives that describe how SAMCA sounds"
+        placeholder="Three to five adjectives that describe how SAMCA sounds, or upload a voice guide"
         error={errors.brand_voice_words}
       />
       <RadioGroup
@@ -87,23 +90,35 @@ export default function BrandFoundationsSlide({ data, onChange, onNext, onBack, 
         required
         error={errors.brand_guidelines_exist}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Brand dos"
-        name="brand_dos"
-        value={data.brand_dos}
+        textFieldName="brand_dos"
+        uploadFieldName="brand_dos_upload"
+        data={data}
         onChange={onChange}
         rows={3}
-        placeholder="What we always do when representing SAMCA"
+        placeholder="What we always do when representing SAMCA, or upload a do/don't reference"
         error={errors.brand_dos}
       />
-      <TextArea
+      <UploadOrTextArea
         label="Brand don'ts"
-        name="brand_donts"
-        value={data.brand_donts}
+        textFieldName="brand_donts"
+        uploadFieldName="brand_donts_upload"
+        data={data}
         onChange={onChange}
         rows={3}
         placeholder="What we never do when representing SAMCA"
         error={errors.brand_donts}
+      />
+      <UploadOrTextArea
+        label="Sample communications"
+        textFieldName="brand_sample_content"
+        uploadFieldName="brand_sample_content_upload"
+        data={data}
+        onChange={onChange}
+        rows={4}
+        placeholder="Three to five examples of written communications, speeches, or decks that represent how SAMCA sounds. You can paste examples or upload documents."
+        error={errors.brand_sample_content}
       />
 
       <NavigationButtons onBack={onBack} onNext={onNext} />

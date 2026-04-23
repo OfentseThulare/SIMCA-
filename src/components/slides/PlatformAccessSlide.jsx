@@ -151,6 +151,160 @@ export default function PlatformAccessSlide({ data, onChange, onNext, onBack, er
         error={errors.platform_social_accounts_other}
       />
 
+      <div className="mt-10 mb-6">
+        <p className="text-[13px] font-bold tracking-[0.08em] uppercase text-atlas-dark/45 mb-1">
+          Workflow automation stack
+        </p>
+        <p className="text-[14px] text-atlas-dark/40 leading-relaxed">
+          Atlas integrates 38 workflows across seven departments. Confirm the tools below so we provision or connect correctly.
+        </p>
+      </div>
+
+      <RadioGroup
+        label="n8n workspace"
+        name="tooling_n8n_preference"
+        options={[
+          'Atlas to provision n8n Cloud workspace',
+          'SAMCA has existing n8n',
+          'No preference',
+        ]}
+        value={data.tooling_n8n_preference}
+        onChange={onChange}
+        error={errors.tooling_n8n_preference}
+      />
+      <RadioGroup
+        label="CRM preference"
+        name="tooling_crm_preference"
+        options={[
+          'Atlas recommends HubSpot',
+          'SAMCA uses existing CRM (specify below)',
+          'No CRM yet, Atlas to set up',
+        ]}
+        value={data.tooling_crm_preference}
+        onChange={onChange}
+        required
+        error={errors.tooling_crm_preference}
+      />
+      <TextInput
+        label="Existing CRM name"
+        name="tooling_crm_existing_name"
+        value={data.tooling_crm_existing_name}
+        onChange={onChange}
+        placeholder="If existing CRM, name it here"
+        error={errors.tooling_crm_existing_name}
+      />
+      <RadioGroup
+        label="Email outreach platform"
+        name="tooling_email_outreach_platform"
+        options={[
+          'Atlas to provision Smartlead Pro',
+          'SAMCA has existing platform (specify)',
+          'No preference',
+        ]}
+        value={data.tooling_email_outreach_platform}
+        onChange={onChange}
+        error={errors.tooling_email_outreach_platform}
+      />
+      <RadioGroup
+        label="LinkedIn Sales Navigator"
+        name="tooling_linkedin_sales_navigator"
+        options={[
+          'Yes, SAMCA has Sales Navigator seat',
+          'No, Atlas to provision',
+          'Not sure',
+        ]}
+        value={data.tooling_linkedin_sales_navigator}
+        onChange={onChange}
+        required
+        error={errors.tooling_linkedin_sales_navigator}
+      />
+      <RadioGroup
+        label="Ticketing platform"
+        name="tooling_ticketing_platform"
+        options={[
+          'Atlas recommends Quicket',
+          'SAMCA uses existing (specify below)',
+          'None yet',
+        ]}
+        value={data.tooling_ticketing_platform}
+        onChange={onChange}
+        required
+        error={errors.tooling_ticketing_platform}
+      />
+      <TextInput
+        label="Existing ticketing platform name"
+        name="tooling_ticketing_existing_name"
+        value={data.tooling_ticketing_existing_name}
+        onChange={onChange}
+        error={errors.tooling_ticketing_existing_name}
+      />
+      <RadioGroup
+        label="Airtable access"
+        name="tooling_airtable_access"
+        options={[
+          'SAMCA has Airtable workspace',
+          'Atlas to provision',
+          'Not sure',
+        ]}
+        value={data.tooling_airtable_access}
+        onChange={onChange}
+        error={errors.tooling_airtable_access}
+      />
+      <RadioGroup
+        label="Team messaging platform"
+        name="tooling_slack_or_teams"
+        options={[
+          'Slack',
+          'Microsoft Teams',
+          'Neither, Atlas to advise',
+        ]}
+        value={data.tooling_slack_or_teams}
+        onChange={onChange}
+        required
+        error={errors.tooling_slack_or_teams}
+      />
+
+      <div className="mt-10 mb-6">
+        <p className="text-[13px] font-bold tracking-[0.08em] uppercase text-atlas-dark/45 mb-1">
+          Integrations and data flow
+        </p>
+      </div>
+
+      <RadioGroup
+        label="WhatsApp Business API provider"
+        name="integration_whatsapp_business_api_provider"
+        options={[
+          'Atlas to provision Clickatell',
+          'SAMCA has existing WhatsApp Business API (specify)',
+          'Personal WhatsApp only',
+        ]}
+        value={data.integration_whatsapp_business_api_provider}
+        onChange={onChange}
+        required
+        error={errors.integration_whatsapp_business_api_provider}
+      />
+      <RadioGroup
+        label="WhatsApp utility template status"
+        name="integration_whatsapp_utility_templates_status"
+        options={[
+          'Templates pre-approved',
+          'Templates drafted, not yet submitted',
+          'Not started, Atlas to draft',
+        ]}
+        value={data.integration_whatsapp_utility_templates_status}
+        onChange={onChange}
+        required
+        error={errors.integration_whatsapp_utility_templates_status}
+      />
+      <TextInput
+        label="Shared Google Drive folder"
+        name="integration_google_drive_folder"
+        value={data.integration_google_drive_folder}
+        onChange={onChange}
+        placeholder="Shared Google Drive link where Atlas can deposit deliverables"
+        error={errors.integration_google_drive_folder}
+      />
+
       <NavigationButtons onBack={onBack} onNext={onNext} />
     </SliderCard>
   )
