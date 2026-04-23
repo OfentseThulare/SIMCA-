@@ -22,8 +22,8 @@ export default function ThankYouSlide({ onBack, onSubmit, isSubmitting, isSubmit
           </p>
           <p className="text-[14px] text-atlas-dark/35 leading-relaxed max-w-md mx-auto" style={{ textWrap: 'balance' }}>
             If you need to update anything before our first working session, email{' '}
-            <a href="mailto:hello@atlascg.co.za" className="text-atlas-red font-semibold hover:underline">
-              hello@atlascg.co.za
+            <a href="mailto:info@atlascg.co.za" className="text-atlas-red font-semibold hover:underline">
+              info@atlascg.co.za
             </a>{' '}
             with the subject line <strong>MIS 2026 onboarding update</strong>.
           </p>
@@ -49,8 +49,8 @@ export default function ThankYouSlide({ onBack, onSubmit, isSubmitting, isSubmit
         </p>
         <p className="text-[14px] text-atlas-dark/35 leading-relaxed max-w-sm mx-auto" style={{ textWrap: 'balance' }}>
           Need to update anything after submitting? Email{' '}
-          <a href="mailto:hello@atlascg.co.za" className="text-atlas-red font-semibold hover:underline">
-            hello@atlascg.co.za
+          <a href="mailto:info@atlascg.co.za" className="text-atlas-red font-semibold hover:underline">
+            info@atlascg.co.za
           </a>{' '}
           with the subject line <strong>MIS 2026 onboarding update</strong>.
         </p>
